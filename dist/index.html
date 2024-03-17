@@ -1,0 +1,20 @@
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body">
+    <h3>Paso 1: Rellena el formulario con tus datos.</h3>
+    <p><input id="name" type="text" alt="nombre" placeholder="Nombre"/></p>
+    <p><input id="address" type="text" alt="dirección" placeholder="Dirección"/></p>
+    <p><input id="dni" type="text" alt="DNI" placeholder="DNI"/></p>
+    <h3>Paso 2: Obtén tu certificado de residencia y súbelo.</h3>
+    <iframe id="pdf" style="width: 100%; height: 100%;"></iframe>
+  </body>
+  <script type="module" defer>
+    import { main } from "./js/main.min.js";
+    console.log('calling main');
+    main();
+    console.log('main called');
+  </script>
+</html>
