@@ -22,6 +22,7 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
+    "downloadjs": "^1.4.7",
     "pdf-lib": "^1.17.1"
   }
 }
