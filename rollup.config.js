@@ -21,7 +21,7 @@ export default {
   plugins: [
     copy({
       targets: [
-        { src: 'src/assets/**/*', dest: 'dist/assets' }
+        { src: 'src/assets', dest: 'dist' }
       ]
     }),
 

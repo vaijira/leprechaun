@@ -1,15 +1,79 @@
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
- </head>
+    <title>..:: BUROCRATIN te ayuda con el modelo 8-3-6 de la hacienda irlandesa. ::..</title>
+    <meta name="description" content="Burocratin te ayuda a rellenar el modelo 8-3-6 de la hacienda irlandesa.">
+    <meta name="keywords" content="8-3-6,hacienda,aeat,rellenar,modelo,informe,Interactive,brokers,irlandesa">
+    <meta property="og:title" content="Burocratin te ayuda a rellenar el modelo 8-3-6 de la hacienda irlandesa." />
+    <meta property="og:description" content="Rellenar modelo 720 de la aeat a partir informe de brokers (Interactive brokers y Degiro)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.burocratin.com/form-8-3-6/" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:image" content="https://www.burocratin.com/img/burocratin.svg" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://www.burocratin.com/form-8-3-6/">
+    <meta name="twitter:title" content="Burocratin te ayuda a rellenar el modelo 8-3-6 de la hacienda irlandesa.">
+    <meta name="twitter:description" content="Rellenar modelo 8-3-6 de la hacienda irlandesa.">
+    <meta name="twitter:image" content="https://www.burocratin.com/img/burocratin.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.burocratin.com/form-8-3-6/" />
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+    <link rel="stylesheet" href="assets/css/leprechaun.css" />
+    <script defer data-api="/api/event" data-domain="burocratin.com" src="/js/script.js"></script>
+  </head>
   <body>
-    <h3>Rellena el formulario 8-3-6 de la hacienda irlandesa para Interactive Brokers en 2 c&oacute;modos pasos.</h3>
-    <h3>Paso 1: Rellena el formulario con tus datos.</h3>
-    <p><input id="name" type="text" alt="Nombre" placeholder="Nombre"/></p>
-    <p><input id="address" type="text" alt="Dirección" placeholder="Dirección"/></p>
-    <p><input id="dni" type="text" alt="DNI" placeholder="DNI"/></p>
-    <h3>Paso 2: Obt&eacute;n tu certificado de residencia fiscal en Espa&ntilde;a y s&uacute;belo, autom&aacute;ticamente se descargar&aacute; el PDF que deber&aacute;s revisar antes de subirlo a tu broker.</h3>
-    <p><input id="fiscal_residence" type="file" accept="application/pdf" alt="Certificado residencia fiscal España" placeholder="Certificado residencia"></p>
+    <h2>Rellena el formulario 8-3-6 de la hacienda irlandesa para Interactive Brokers en 2 c&oacute;modos pasos.</h2>
+    <section>
+      <h3>Paso 1: Rellena el formulario con tus datos.</h3>
+      <p>
+        <label for="name" alt="Nombre">Nombre:</label>
+        <input id="name" type="text" alt="Nombre" placeholder="Nombre" size="30"/>
+      </p>
+      <p>
+        <label for="address" alt="Dirección">Direcci&oacute;n:</label>
+        <input id="address" type="text" alt="Dirección" placeholder="Dirección" size="60"/>
+      </p>
+      <p>
+        <label for="dni" alt="DNI">DNI:</label>
+        <input id="dni" type="text" alt="DNI" placeholder="DNI" maxlength="9" size="10"/>
+      </p>
+    </section>
+    <section>
+      <h3>Paso 2: Obt&eacute;n tu certificado de residencia fiscal en Espa&ntilde;a y s&uacute;belo, autom&aacute;ticamente se descargar&aacute; el PDF que deber&aacute;s revisar antes de subirlo a tu broker.</h3>
+      <p>
+        <label for="fiscal_residence" alt="Certificado residencia fiscal en España">Certificado de residencia fiscal en España:</label>
+        <input id="fiscal_residence" type="file" accept="application/pdf" alt="Certificado residencia fiscal España" placeholder="Certificado residencia">
+      </p>
+    </section>
+    <hr/>
+    <section>
+      <h4>Ayuda para obtener el certificado de residencia fiscal:</h4>
+      <p>
+       * Visita <a href="https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G305.shtml" alt="Página agencia tributaria española para obtener certificado de residencia" target="_blank" rel="noopener external nofollow">la p&aacute;gina de la agencia tributaria española para obtener el certificado de residencia fiscal</a> y pincha en "solicitud".
+      </p>
+      <p>
+        <div class="dropdown">
+          <div class="dropdown-content">
+          <div class="desc">Pincha en solicitud.</div>
+          <img src="assets/img/aeat_step1.png" alt="imagen aeat para pinchar solicitud." height="357" width="720"/>
+          </div>
+          <img src="assets/img/aeat_step1.png" alt="imagen aeat para pinchar solicitud." height="75" width="150" />
+        </div>
+      </p>
+      <p>
+        * Despu&eacute;s hay que seleccionar modelo "general" y pa&iacute;s "Irlanda".
+      </p>
+      <p>
+         <div class="dropdown">
+          <div class="dropdown-content">
+          <div class="desc">Selecciona modelo "general" y pa&iacute;s "Irlanda".</div>
+          <img src="assets/img/aeat_step2.png" alt="Selecciona modelo general y país Irlanda." height="357" width="720"/>
+          </div>
+          <img src="assets/img/aeat_step2.png" alt="Selecciona model general y país Irlanda" height="75" width="150" />
+        </div>
+      </p>
+    </section>
   </body>
   <script type="module" defer>
     import { merge } from "./js/main.min.js";

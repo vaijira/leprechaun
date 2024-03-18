@@ -66,15 +66,10 @@ async function fillForm(name, address, dni) {
 
 export async function merge(name, address, dni, residenceFile) {
   const formBytes = await fillForm(name, address, dni);
-  const formPdf = await PDFDocument.load(formBytes);
+  const mergePdf = await PDFDocument.load(formBytes);
 
   const aeatBytes = await readFileAsync(residenceFile);
   const aeatPdf = await PDFDocument.load(aeatBytes);
-
-  const mergePdf = await PDFDocument.create();
-
-  const copiedPagesA = await mergePdf.copyPages(formPdf, formPdf.getPageIndices());
-  copiedPagesA.forEach((page) => mergePdf.addPage(page));
 
   const copiedPagesB = await mergePdf.copyPages(aeatPdf, aeatPdf.getPageIndices());
   copiedPagesB.forEach((page) => mergePdf.addPage(page));
