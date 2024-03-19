@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "downloadjs": "^1.4.7",
-    "pdf-lib": "^1.17.1"
+    "pdf-lib": "^1.17.1",
+    "signature_pad": "^4.2.0"
   }
 }

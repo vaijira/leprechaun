@@ -1,5 +1,6 @@
 import { PDFDocument } from 'pdf-lib';
 import downloadjs from 'downloadjs';
+import SignaturePad from 'signature_pad';
 
 const COUNTRY = 'SPAIN';
 const BROKER = 'Interactive Brokers Ireland Limited';
@@ -24,7 +25,7 @@ function getStrDate() {
   }).replace(/(\d+)\/(\d+)\/(\d+)/, '$2-$1-$3').replaceAll('-','');
 }
 
-async function fillForm(name, address, dni) {
+async function fillForm(name, address, dni, signatureBytes) {
   const formUrl = 'assets/files/form-8-3-6-interest-withholding-tax.pdf';
   const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer());
 
@@ -61,11 +62,31 @@ async function fillForm(name, address, dni) {
   const dateField = form.getTextField('Text1');
   dateField.setText(getStrDate());
 
+  const pngImage = await pdfDoc.embedPng(signatureBytes);
+
+  const pngDims = pngImage.scale(0.6);
+
+  const page = pdfDoc.getPage(0);
+
+  page.drawImage(pngImage, {
+    x: 160.0,
+    y: 285.0,
+    width: pngDims.width,
+    height: pngDims.height,
+  });
+
   return await pdfDoc.save();
 }
 
-export async function merge(name, address, dni, residenceFile) {
-  const formBytes = await fillForm(name, address, dni);
+export function createSignaturePad() {
+  return new SignaturePad(document.getElementById('signature-pad'), {
+    backgroundColor: 'rgba(255, 255, 255, 0)',
+    penColor: 'rgb(0, 0, 0)'
+  });
+}
+
+export async function merge(name, address, dni, residenceFile, signatureBytes) {
+  const formBytes = await fillForm(name, address, dni, signatureBytes);
   const mergePdf = await PDFDocument.load(formBytes);
 
   const aeatBytes = await readFileAsync(residenceFile);

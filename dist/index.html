@@ -38,6 +38,15 @@
         <label for="dni" alt="DNI">DNI:</label>
         <input id="dni" type="text" alt="DNI" placeholder="DNI" maxlength="9" size="10"/>
       </p>
+      <p>
+        <label for="signature-pad" alt="Firma">Firma:</label>
+        <div class="wrapper">
+          <canvas id="signature-pad" class="signature-pad" width="280" height="40"></canvas>
+        </div>
+        <p>
+          <button id="clear" alt="Limpiar">Limpiar</button>
+        </p>
+      </p>
     </section>
     <section>
       <h3>Paso 2: Obt&eacute;n tu certificado de residencia fiscal en Espa&ntilde;a y s&uacute;belo, autom&aacute;ticamente se descargar&aacute; el PDF que deber&aacute;s revisar antes de subirlo a tu broker.</h3>
@@ -87,20 +96,28 @@
       </footer>
   </body>
   <script type="module" defer>
-    import { merge } from "./js/main.min.js";
+    import { merge, createSignaturePad } from "./js/main.min.js";
 
-    function generate() {
+    let signaturePad = createSignaturePad();
+    document.getElementById('clear').addEventListener('click', function () {
+      signaturePad.clear();
+    });
+    
+    function generate(signaturePad) {
       const name = document.getElementById('name').value;
       const address = document.getElementById('address').value;
       const dni = document.getElementById('dni').value;
       const fiscalResidenceFile = document.getElementById('fiscal_residence').files[0];
+      const signatureImageUrl = signaturePad.toDataURL();
+      const signatureBytes = signatureImageUrl;
+      console.log(signatureBytes);
 
-      merge(name, address, dni, fiscalResidenceFile);
+      merge(name, address, dni, fiscalResidenceFile, signatureBytes);
     }
 
     let inputFile = document.getElementById('fiscal_residence');
     inputFile.addEventListener('change', () => {
-      generate();
+      generate(signaturePad);
     });
   </script>
 
