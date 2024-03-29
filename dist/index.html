@@ -108,9 +108,7 @@
       const address = document.getElementById('address').value;
       const dni = document.getElementById('dni').value;
       const fiscalResidenceFile = document.getElementById('fiscal_residence').files[0];
-      const signatureImageUrl = signaturePad.toDataURL();
-      const signatureBytes = signatureImageUrl;
-      console.log(signatureBytes);
+      const signatureBytes = signaturePad.toDataURL();
 
       merge(name, address, dni, fiscalResidenceFile, signatureBytes);
     }
