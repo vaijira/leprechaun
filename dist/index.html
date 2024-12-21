@@ -23,41 +23,37 @@
     <script defer data-domain="burocratin.com" data-api="/chivatin/chivatin/event" src="/chivatin/chivatin/script.js"></script>
   </head>
   <body>
-    <h2>Rellena el formulario 8-3-6 de la hacienda irlandesa para Interactive Brokers en 2 c&oacute;modos pasos.</h2>
-    <section>
-      <h3>Paso 1: Rellena el formulario con tus datos tal como aparecen en Interactive Brokers.</h3>
+    <header><h1>Rellena el formulario 8-3-6 de la hacienda irlandesa para Interactive Brokers en 2 c&oacute;modos pasos.</h1></header>
+    <main class="container">
+    <section class="item">
+      <h2>Paso 1: Rellena el formulario con tus datos tal como aparecen en Interactive Brokers.</h2>
       <p>
-        <label for="name" alt="Nombre">Nombre:</label>
-        <input id="name" type="text" alt="Nombre" placeholder="Nombre" size="30"/>
+        <input id="name" type="text" alt="Nombre" placeholder="Nombre completo" size="30"/>
       </p>
       <p>
-        <label for="address" alt="Dirección">Direcci&oacute;n:</label>
         <input id="address" type="text" alt="Dirección" placeholder="Dirección" size="60"/>
       </p>
       <p>
-        <label for="dni" alt="DNI">DNI:</label>
         <input id="dni" type="text" alt="DNI" placeholder="DNI" maxlength="9" size="10"/>
       </p>
-      <p>
-        <label for="signature-pad" alt="Firma">Firma:</label>
-        <div class="wrapper">
-          <canvas id="signature-pad" class="signature-pad" width="280" height="40"></canvas>
-        </div>
+      <div>
+        <p><label for="signature-pad" alt="Firma manual">Firma manual:</label></p>
+        <p><canvas id="signature-pad" style="border-style: solid;" width="280" height="40"></canvas></p>
         <p>
           <button id="clear" alt="Limpiar firma">Limpiar firma</button>
         </p>
-      </p>
-    </section>
-    <section>
-      <h3>Paso 2: Obt&eacute;n tu certificado de residencia fiscal en Espa&ntilde;a y s&uacute;belo, autom&aacute;ticamente se descargar&aacute; el PDF que deber&aacute;s revisar antes de subirlo a tu broker.</h3>
+        <p>Si vas a firmar despu&eacute;s digitalmente el documento generado no hace falta que firmes manualmente.
+          Puedes hacerlo, por ejemplo, con "acrobat reader" pulsando en "herramientas", luego "certificados" y pulsando en "firmar digitalmente".
+        </p>
+      </div>
+      <h2>Paso 2: Obt&eacute;n tu certificado de residencia fiscal en Espa&ntilde;a y s&uacute;belo, autom&aacute;ticamente se descargar&aacute; el PDF que deber&aacute;s revisar antes de subirlo a tu broker.</h2>
       <p>
         <label for="fiscal_residence" alt="Certificado residencia fiscal en España">Certificado de residencia fiscal en España:</label>
         <input id="fiscal_residence" type="file" accept="application/pdf" alt="Certificado residencia fiscal España" placeholder="Certificado residencia">
       </p>
     </section>
-    <hr/>
-    <section>
-      <h4>Ayuda para obtener el certificado de residencia fiscal:</h4>
+    <section class="item">
+      <h3>Ayuda para obtener el certificado de residencia fiscal:</h3>
       <p>
        * Visita <a href="https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G305.shtml" alt="Página agencia tributaria española para obtener certificado de residencia" target="_blank" rel="noopener external nofollow">la p&aacute;gina de la agencia tributaria española para obtener el certificado de residencia fiscal</a> y pincha en "solicitud".
       </p>
@@ -83,6 +79,7 @@
         </div>
       </p>
     </section>
+    </main>
     <footer>Comparte en tus redes sociales si te ha sido de utilidad.
       <div>
         <span style="margin: 2px;"><a alt="Compartir en X" aria-label="Compartir en X" href="https://x.com/intent/tweet?text=Te ayuda a rellenar el formulario 8-3-6&amp;url=https://www.burocratin.com/form-8-3-6/" target="_blank" rel="external nofollow"><svg alt="X twitter icon" width="24" height="24" viewBox="0 0 24 24"><path d="m 18.744792,0 h 3.850107 l -8.453496,10.079827 9.876362,13.673506 H 16.267332 L 10.199228,15.444049 3.2522952,23.753333 H -0.59781209 L 8.3578721,12.9723 -1.1,0 h 7.9429388 l 5.4822182,7.5905485 z m -1.347537,21.386764 h 2.134298 L 5.7213859,2.2789175 H 3.4280611 Z" style="stroke-width:0.0856513"/></svg></a></span>

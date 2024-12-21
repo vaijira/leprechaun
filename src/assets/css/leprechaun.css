@@ -1,21 +1,28 @@
-.wrapper {
-  border-style: solid;
-  position: relative;
-  width: 280px;
-  height: 40px;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+html {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.signature-pad {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 280px;
-  height: 40px;
-  background-color: white;
+body {
+  text-align: center;
+  color: #4d4d4d;
+}
+
+footer {
+  margin: 1em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 5px 5px;
+  justify-items: center;
+  align-items: center;
+}
+
+.item {
+  padding: 1em;
+  border-style: dotted;
+  width: 95%;
 }
 
 .dropdown {
@@ -27,7 +34,9 @@
 .dropdown-content {
   align-content: center;
   display: none;
-  position: absolute;
+  position: fixed;
+  top: 15%;
+  left: 15%;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -38,7 +47,7 @@
   display: block;
 }
 
-  .desc {
-    padding: 15px;
-    text-align: center;
-  }
+.desc {
+  padding: 15px;
+  text-align: center;
+}
